@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="250dp"
+    android:height="250dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background dark circle -->
+    <path
+        android:fillColor="#0F111A"
+        android:pathData="M54,54m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0" />
+
+    <!-- Left Blue Gradient Ring -->
+    <path
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M54,18 C34.12,18 18,34.12 18,54 C18,73.88 34.12,90 54,90">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="18"
+                android:startY="54"
+                android:endX="54"
+                android:endY="18"
+                android:type="linear">
+                <item android:offset="0" android:color="#00E5FF" />
+                <item android:offset="1" android:color="#2979FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Right Segmented Ring -->
+    <path android:fillColor="#FFD600" android:pathData="M78,28 L82,24 L85,28 L81,32 Z" />
+    <path android:fillColor="#FFC400" android:pathData="M85,38 L89,35 L91,40 L87,43 Z" />
+    <path android:fillColor="#FFAB00" android:pathData="M88,50 L93,48 L94,54 L89,56 Z" />
+    <path android:fillColor="#FF9100" android:pathData="M88,62 L93,64 L91,70 L86,68 Z" />
+    <path android:fillColor="#FF6D00" android:pathData="M83,74 L87,78 L84,83 L80,79 Z" />
+
+    <!-- Map Pin -->
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M54,10 C50.69,10 48,12.69 48,16 C48,20.5 54,26 54,26 C54,26 60,20.5 60,16 C60,12.69 57.31,10 54,10 Z M54,18 C52.9,18 52,17.1 52,16 C52,14.9 52.9,14 54,14 C55.1,14 56,14.9 56,16 C56,17.1 55.1,18 54,18 Z" />
+
+    <!-- Detailed Scooter -->
+    <group android:translateX="25" android:translateY="42" android:scaleX="0.55" android:scaleY="0.55">
+        <path android:fillColor="#EEEEEE" android:pathData="M50,10 L70,30 L85,35 L90,45 L70,42 L55,38 Z" />
+        <path android:fillColor="#FAFAFA" android:pathData="M20,40 L40,40 L55,50 L30,52 Z" />
+        <path android:fillColor="#212121" android:pathData="M25,35 C35,30 55,30 65,40 L60,45 L25,45 Z" />
+        <path android:fillColor="#263238" android:pathData="M20,45 A10,10 0 1 0 20.001,45 Z" />
+        <path android:fillColor="#263238" android:pathData="M75,45 A10,10 0 1 0 75.001,45 Z" />
+    </group>
+
+</vector>

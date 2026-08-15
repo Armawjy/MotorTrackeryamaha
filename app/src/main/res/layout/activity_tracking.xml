@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    tools:context=".TrackingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIconTint="@color/text_primary"
+            app:title="Perjalanan"
+            app:titleCentered="true"
+            app:titleTextColor="@color/text_primary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="56dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Active Trip Card -->
+            <LinearLayout
+                android:id="@+id/cardActiveTrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_active_trip"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tvGpsStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="○ PERJALANAN AKTIF"
+                    android:textColor="@color/status_safe"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <com.example.motortrackeryamaha.ui.custom.SpeedometerView
+                    android:id="@+id/speedometer"
+                    android:layout_width="220dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jarak" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                        <TextView android:id="@+id/tvCurrentDistance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="42,7 KM" android:textColor="@color/text_primary" android:textSize="36sp" android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Durasi" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                        <TextView android:id="@+id/tvDuration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="01:15:32" android:textColor="@color/text_primary" android:textSize="32sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_speed" app:tint="@color/text_secondary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kecepatan Rata-rata" android:textColor="@color/text_secondary" android:textSize="10sp" android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_speed" app:tint="@color/text_secondary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kecepatan Maksimum" android:textColor="@color/text_secondary" android:textSize="10sp" android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+                    <TextView android:id="@+id/tvAvgSpeed" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="35 KM/Jam" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold" android:layout_marginStart="24dp"/>
+                    <TextView android:id="@+id/tvMaxSpeed" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="67 KM/Jam" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold" android:layout_marginStart="24dp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#1AFFFFFF" android:layout_marginVertical="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_trip" app:tint="@color/text_secondary"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GPS AKTIF" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" android:layout_marginStart="8dp"/>
+
+                    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_build" app:tint="@color/text_secondary"/>
+                    <TextView android:id="@+id/tvSatelites" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10 SATELIT" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" android:layout_marginStart="8dp" android:layout_marginEnd="12dp"/>
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_signal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnActionTrip"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="■ SELESAI PERJALANAN"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/status_danger"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Route Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0.5dp"
+                app:strokeColor="#1AFFFFFF"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="12dp">
+                            <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_trip" app:tint="@color/accent_blue"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rute Perjalanan" android:textColor="@color/accent_blue" android:textSize="11sp" android:textStyle="bold" android:layout_marginStart="8dp"/>
+                        </LinearLayout>
+
+                        <!-- Timeline Start -->
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <View android:id="@+id/startDot" android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_circle_icon" android:backgroundTint="@color/status_safe" android:layout_marginTop="4dp"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_toEndOf="@id/startDot" android:layout_marginStart="16dp">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Titik Awal" android:textColor="@color/text_secondary" android:textSize="10sp"/>
+                                <TextView android:id="@+id/tvStartPoint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sudiang" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold"/>
+                                <TextView android:id="@+id/tvStartTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="14 Agustus 2026 08:25" android:textColor="@color/text_secondary" android:textSize="10sp" android:layout_marginTop="2dp"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <View android:layout_width="1dp" android:layout_height="30dp" android:background="#33FFFFFF" android:layout_marginStart="4.5dp" android:layout_marginVertical="4dp"/>
+
+                        <!-- Timeline End -->
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <View android:id="@+id/endDot" android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_circle_icon" android:backgroundTint="@color/status_danger" android:layout_marginTop="4dp"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_toEndOf="@id/endDot" android:layout_marginStart="16dp">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Titik Akhir" android:textColor="@color/text_secondary" android:textSize="10sp"/>
+                                <TextView android:id="@+id/tvEndPoint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Maros" android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold"/>
+                                <TextView android:id="@+id/tvEndTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="14 Agustus 2026 09:40" android:textColor="@color/text_secondary" android:textSize="10sp" android:layout_marginTop="2dp"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!-- Map Placeholder -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="140dp"
+                        android:layout_height="160dp"
+                        app:cardBackgroundColor="#0AFFFFFF"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/bg_bike_glow" android:alpha="0.3" android:scaleType="centerCrop"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Riwayat Terakhir" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvSeeAllTrips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lihat Semua" android:textColor="@color/accent_blue" android:textSize="13sp" android:layout_alignParentEnd="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecentTrips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_history_trip"
+                tools:itemCount="3"/>
+
+            <!-- Footer Stats Summary -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:alignmentMode="alignMargins"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp">
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_trip" app:tint="@color/accent_blue"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total Jarak" android:textColor="@color/text_secondary" android:textSize="9sp" android:layout_marginTop="8dp"/>
+                    <TextView android:id="@+id/footerTotalDist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="42,7 KM" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" app:tint="@color/status_safe"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total Durasi" android:textColor="@color/text_secondary" android:textSize="9sp" android:layout_marginTop="8dp"/>
+                    <TextView android:id="@+id/footerTotalTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="01:15:32" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_speed" app:tint="@color/status_warning"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rata-rata" android:textColor="@color/text_secondary" android:textSize="9sp" android:layout_marginTop="8dp"/>
+                    <TextView android:id="@+id/footerAvgSpeed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="35 KM/Jam" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_speed" app:tint="@color/status_danger"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Maksimum" android:textColor="@color/text_secondary" android:textSize="9sp" android:layout_marginTop="8dp"/>
+                    <TextView android:id="@+id/footerMaxSpeed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="67 KM/Jam" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+            </GridLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/card_dark"
+        app:itemIconTint="@color/selector_nav_icon"
+        app:itemTextColor="@color/selector_nav_text"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

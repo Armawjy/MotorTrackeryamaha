@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIconTint="@color/text_primary"
+            app:title="Statistik"
+            app:titleCentered="true"
+            app:titleTextColor="@color/text_primary" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/periodTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabIndicatorColor="@color/accent_blue"
+            app:tabSelectedTextColor="@color/accent_blue"
+            app:tabTextColor="@color/text_secondary"
+            app:tabMode="fixed">
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Minggu" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bulan" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tahun" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Semua" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvPeriodTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistik Keseluruhan"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:rowOrderPreserved="false">
+
+                <!-- Cards (Distance, Trip, Oil, Service, Cost) -->
+                <include layout="@layout/item_stat_card" android:id="@+id/cardDistance" />
+                <include layout="@layout/item_stat_card" android:id="@+id/cardTrips" />
+                <include layout="@layout/item_stat_card" android:id="@+id/cardOil" />
+                <include layout="@layout/item_stat_card" android:id="@+id/cardService" />
+                <include layout="@layout/item_stat_card" android:id="@+id/cardCost" />
+                <include layout="@layout/item_stat_card" android:id="@+id/cardComp" />
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rincian Pengeluaran"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <include layout="@layout/item_info_row" android:id="@+id/rowOilCost"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/rowServiceCost"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/rowCompCost"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/rowEngineCost"/>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#33FFFFFF" android:layout_marginVertical="8dp"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/rowTotalCost"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aktivitas Perjalanan"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Simple Bar Chart View Placeholder -->
+            <com.example.motortrackeryamaha.ui.statistics.SimpleBarChartView
+                android:id="@+id/distanceChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="32dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

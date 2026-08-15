@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp">
+
+        <View
+            android:id="@+id/groupDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_circle_icon"
+            android:backgroundTint="@color/accent_blue" />
+
+        <TextView
+            android:id="@+id/tvGroupDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="14 Agustus 2026"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Dashed Line -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4.5dp"
+            android:background="#33FFFFFF"
+            android:layout_alignTop="@+id/rvGroupItems"
+            android:layout_alignBottom="@+id/rvGroupItems"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGroupItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:nestedScrollingEnabled="false" />
+    </RelativeLayout>
+
+</LinearLayout>

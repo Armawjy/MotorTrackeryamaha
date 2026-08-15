@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/text_primary"
+            app:title="Profil Motor"
+            app:titleCentered="true"
+            app:titleTextColor="@color/text_primary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardMotorPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/ivMotorPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/img" />
+
+                    <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#33000000"/>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_menu"
+                        android:rotation="90"
+                        app:tint="@color/white"
+                        android:alpha="0.8"/>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFORMASI MOTOR"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="24dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowBrand"/>
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowModel"/>
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowCc"/>
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowYear"/>
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowPlate"/>
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowColor"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <include layout="@layout/item_odometer_card" android:id="@+id/rowOdometerFisik"/>
+            <include layout="@layout/item_odometer_card" android:id="@+id/rowOdometerDigitalCard"/>
+            <include layout="@layout/item_odometer_card" android:id="@+id/rowOdometerEstimasi"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="24dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowLastService"/>
+                    <include layout="@layout/item_settings_row" android:id="@+id/rowNotes"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditMotor"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="32dp"
+                android:text="EDIT PROFIL MOTOR"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/accent_blue"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

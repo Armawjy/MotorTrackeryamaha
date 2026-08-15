@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header with Title and Icons -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MotorTracker"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMotorNameHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="YAMAHA MIO S 125"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivNotifications"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_notifications"
+                    app:tint="@color/text_primary" />
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignTop="@id/ivNotifications"
+                    android:layout_alignEnd="@id/ivNotifications"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_circle_icon"
+                    android:backgroundTint="@color/status_danger" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_bike_glow">
+
+                <ImageView
+                    android:id="@+id/ivMotorDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/img"
+                    android:paddingBottom="20dp"/>
+            </FrameLayout>
+
+            <!-- Total Distance Card - Styled like Image -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_card_distance"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_trip"
+                        app:tint="@color/accent_blue" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="JARAK TERPANTAU"
+                        android:textColor="@color/accent_blue"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvTotalDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="1.245,8 KM"
+                    android:textColor="@color/text_primary"
+                    android:textSize="42sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTrackingSince"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Sejak 14 Agustus 2026 ℹ️"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Oil Status Card - Styled like Image -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_card_oil"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_oil"
+                            app:tint="@color/status_orange" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="STATUS OLI MESIN"
+                            android:textColor="@color/status_orange"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvOilStatusBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/bg_status_safe"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="● AMAN"
+                        android:textColor="@color/status_safe"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+                    <TextView
+                        android:id="@+id/tvOilKmLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.245,8 / 2.000 KM"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvOilPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="62%"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/oilProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:indicatorColor="@color/status_orange"
+                    app:trackColor="#1AFFFFFF"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="10dp"
+                    android:progress="62"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sisa"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp" />
+                        <TextView
+                            android:id="@+id/tvOilRemainingKm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="754,2 KM"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Batas Waktu"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="10sp" />
+                        <TextView
+                            android:id="@+id/tvOilRemainingDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="43 HARI"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Main Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartTrip"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="24dp"
+                android:text="▶ MULAI PERJALANAN"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/accent_blue"/>
+
+            <!-- Grid Menu Shortcuts -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:alignmentMode="alignMargins"
+                android:rowOrderPreserved="false">
+
+                <!-- Item Perjalanan -->
+                <LinearLayout
+                    android:id="@+id/menuTrip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_trip" app:tint="@color/accent_blue"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perjalanan" android:textColor="@color/text_primary" android:textSize="11sp" android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Item Oli -->
+                <LinearLayout
+                    android:id="@+id/menuOil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_oil" app:tint="#FFC107"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Oli" android:textColor="@color/text_primary" android:textSize="11sp" android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Item Servis -->
+                <LinearLayout
+                    android:id="@+id/menuService"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_build" app:tint="@color/white"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Servis" android:textColor="@color/text_primary" android:textSize="11sp" android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:id="@+id/menuHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_history" app:tint="@color/text_secondary"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Riwayat" android:textColor="@color/text_primary" android:textSize="11sp" android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menuStats"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_stats" app:tint="@color/text_secondary"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Statistik" android:textColor="@color/text_primary" android:textSize="11sp" android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menuMotor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0.5dp"
+                        app:strokeColor="#1AFFFFFF">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_motor" app:tint="@color/text_secondary"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Motor" android:textColor="@color/text_primary" android:textSize="11sp" android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </GridLayout>
+
+            <!-- Statistics Summary Section (Optional but kept for functionality) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <include layout="@layout/item_info_row" android:id="@+id/summaryDistance"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/summaryOil"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/summaryService"/>
+                    <include layout="@layout/item_info_row" android:id="@+id/summaryCost"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSeeStats"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="LIHAT STATISTIK LENGKAP"
+                        android:textColor="@color/accent_blue"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/card_dark"
+        app:itemIconTint="@color/selector_nav_icon"
+        app:itemTextColor="@color/selector_nav_text"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

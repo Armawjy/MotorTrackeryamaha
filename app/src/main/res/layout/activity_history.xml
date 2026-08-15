@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    tools:context=".HistoryActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Riwayat"
+            app:titleCentered="true"
+            app:titleTextColor="@color/text_primary">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/text_primary"
+                android:rotation="90"/>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabIndicatorColor="@color/accent_blue"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/text_secondary"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/TabTextAppearance">
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Semua" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perjalanan" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Oli" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Servis" />
+            <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perawatan" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="56dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ringkasan Riwayat"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Summary Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0.5dp"
+                app:strokeColor="#1AFFFFFF"
+                android:layout_marginBottom="24dp">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="4"
+                    android:padding="12dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_trip" app:tint="@color/accent_blue"/>
+                        <TextView android:id="@+id/tvTotalTrips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perjalanan\nTotal" android:textColor="@color/text_secondary" android:textSize="9sp" android:gravity="center" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_oil" app:tint="#FFC107"/>
+                        <TextView android:id="@+id/tvTotalOils" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ganti Oli\nTotal" android:textColor="@color/text_secondary" android:textSize="9sp" android:gravity="center" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_build" app:tint="@color/status_safe"/>
+                        <TextView android:id="@+id/tvTotalServices" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Servis\nTotal" android:textColor="@color/text_secondary" android:textSize="9sp" android:gravity="center" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:gravity="center">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_history" app:tint="@color/status_danger"/>
+                        <TextView android:id="@+id/tvTotalMaintenances" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perawatan\nTotal" android:textColor="@color/text_secondary" android:textSize="9sp" android:gravity="center" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                </GridLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Timeline List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_history_group" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLoadMore"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:text="📅 LIHAT LEBIH LAMA"
+                android:textColor="@color/accent_blue"
+                app:strokeColor="@color/accent_blue"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/card_dark"
+        app:itemIconTint="@color/selector_nav_icon"
+        app:itemTextColor="@color/selector_nav_text"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
