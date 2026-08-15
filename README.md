@@ -47,4 +47,21 @@ Anda bisa membagikan aplikasi ini kepada siapa saja hanya melalui sebuah **Link*
 4. Jalankan (Run) ke perangkat Anda.
 
 ---
+
+## 👨‍💻 Tentang Developer
+<img src="arma_wijaya.jpg" width="200" style="border-radius: 15px; border: 2px solid #00E5FF;">
+
+**Arma Wijaya, S.Kom.**
+Seorang pengembang aplikasi Android yang berfokus pada solusi teknologi untuk otomotif dan manajemen perjalanan.
+
+> *"Membangun aplikasi ini bukan sekadar tentang baris kode, tapi tentang kecintaan (passion) saya pada dunia otomotif dan keinginan untuk memberikan solusi terbaik bagi para pengguna Yamaha. Seperti perjalanan motor yang butuh perawatan, dedikasi saya dalam mengembangkan teknologi ini juga akan terus berlanjut."*
+
+### 🛠️ Pengembangan Masa Depan
+Untuk membuat **MotorTracker Yamaha** semakin mantap, berikut adalah rencana pengembangan ke depannya:
+- **Analisis AI**: Deteksi kerusakan mesin melalui pola getaran HP.
+- **Komunitas**: Fitur berbagi rute dan touring bareng pengguna lain.
+- **Dark Mode Dinamis**: Tampilan yang menyesuaikan dengan kondisi cahaya di jalan.
+- **Integrasi Smartwatch**: Pantau kecepatan langsung dari pergelangan tangan.
+
+---
 **Dikembangkan oleh [Armawjy](https://github.com/Armawjy)**
