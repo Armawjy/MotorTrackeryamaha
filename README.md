@@ -2,6 +2,12 @@
 
 Aplikasi pintar untuk melacak perjalanan, memantau kecepatan (Speedometer), dan manajemen perawatan motor Yamaha Anda secara otomatis menggunakan GPS.
 
+## 📥 Link Download (APK)
+Klik link di bawah ini untuk mendownload dan menginstall aplikasi langsung di HP Anda melalui Google Drive:
+> **[Download app-debug.apk (Google Drive)](https://drive.google.com/drive/folders/1HRVIMbYi3CfvFA-Y4ye7QYgdQTP1gEGJ)**
+
+*Catatan: Jika muncul peringatan keamanan, pilih "Tetap Install" (Install Anyway).*
+
 ## 🚀 Fitur Utama
 - **Speedometer Analog & Digital**: Tampilan jarum merah ikonik yang bergerak real-time mengikuti kecepatan motor Anda.
 - **Smart Odometer**: Gabungan antara Odometer Fisik (asli dari motor) dan Odometer Digital (hasil rekaman GPS).
