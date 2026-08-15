@@ -51,7 +51,7 @@ Anda bisa membagikan aplikasi ini kepada siapa saja hanya melalui sebuah **Link*
 ## 👨‍💻 Tentang Developer
 <img src="arma_wijaya.jpg" width="200" style="border-radius: 15px; border: 2px solid #00E5FF;">
 
-**Arma Wijaya, S.Kom.**
+**Arma Wijaya**
 Seorang pengembang aplikasi Android yang berfokus pada solusi teknologi untuk otomotif dan manajemen perjalanan.
 
 > *"Membangun aplikasi ini bukan sekadar tentang baris kode, tapi tentang kecintaan (passion) saya pada dunia otomotif dan keinginan untuk memberikan solusi terbaik bagi para pengguna Yamaha. Seperti perjalanan motor yang butuh perawatan, dedikasi saya dalam mengembangkan teknologi ini juga akan terus berlanjut."*
